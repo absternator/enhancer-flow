@@ -1,4 +1,3 @@
-from __future__ import annotations
 import numpy as np
 
 # Canonical alphabet. DO NOT reorder — the oracle and motif tools assume A,C,G,T.
