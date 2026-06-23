@@ -70,7 +70,7 @@ class EnhancerDataset:
         out[~valid] = 1.0 / VOCAB_SIZE
         return out
 
-    def decode_raw(self, row: int) -> str:
+    def decode_row(self, row: int) -> str:
         idx = self.indices[row]
         idx = idx[(idx >= 0) & (idx < VOCAB_SIZE)]
         return indices_to_seq(idx)

@@ -35,6 +35,17 @@ def test_make_synthetic():
     assert batch["cond"].shape == (5, dataset.cond_spec.dim)
     assert np.allclose(batch["x1"].sum(axis=-1), 1.0)  # one-hot or uniform
 
+def test_make_synthetic_with_cond_spec():
+    cond_spec = ConditionSpec(kind="class", num_classes=81, dim=1)
+    dataset = make_synthetic(100, 10, cond_spec=cond_spec)
+
+    iterator = dataset.iter_batchs(batch_size=5, shuffle=False, drop_last=False)
+    batch = next(iterator)
+
+    assert batch["cond"].shape == (5, 1)
+    assert np.all(batch["cond"] == batch["cond"].astype(int)) # class labels are integers
+
+
 
 def test_seqs_to_dataset():
     seqs = ["ACGT", "TGCA", "NNNN"]

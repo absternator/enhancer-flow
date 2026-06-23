@@ -8,7 +8,7 @@
             "name": "Debug run train",
             "type": "debugpy",
             "request": "launch",
-            "python": "/home/anmol/code/enhancer-flow/.venv/bin/python",
+            "python": "/mnt/gpu-storage/homes/athapar/code/enhancer-flow/.venv/bin/python",
             "module": "enhancer_flow.viz",
             // "args": [
             //     "num_epochs=10",
@@ -26,10 +26,10 @@
             "name": "debug test function",
             "type": "debugpy",
             "request": "launch",
-            "python": "/home/anmol/code/enhancer-flow/.venv/bin/python",
+            "python": "/mnt/gpu-storage/homes/athapar/code/enhancer-flow/.venv/bin/python",
             "module": "pytest",
             "args": [
-                "tests/test_core.py",
+                "tests/flows/test_dirichlet.py",
                 // "-k",
                 // "test_prevalence_from_pretrained_from_hub"
             ],
